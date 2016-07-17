@@ -4,6 +4,7 @@
 dictionaries and sets.
 """
 
+
 def count_words(phrase):
     """Count unique words in a string.
 
@@ -34,7 +35,7 @@ def count_words(phrase):
 
 def get_melon_price(melon_name):
     """Given a melon name, return the price of the melon
-    
+
     Here are a list of melon names and prices:
     Watermelon 2.95
     Cantaloupe 2.50

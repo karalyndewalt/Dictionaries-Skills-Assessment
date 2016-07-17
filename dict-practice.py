@@ -32,8 +32,12 @@ def without_duplicates(words):
         [2, 33333, 111111]
     """
 
-    return []
+    word_dict = {}
 
+    for word in words:
+            word_dict[word] = words.count(word)
+
+    return word_dict
 
 def find_unique_common_items(items1, items2):
     """Produce the set of *unique* common items in two lists.
@@ -61,8 +65,10 @@ def find_unique_common_items(items1, items2):
         >>> sorted(find_unique_common_items(["2", "1", 2], [2, 1]))
         [2]
     """
+    items1 = set(items1)
+    items2 = set(items2)
 
-    return []
+    return items1 & items2
 
 def get_sum_zero_pairs(numbers):
     """Given list of numbers, return list of pair summing to 0.
@@ -90,6 +96,13 @@ def get_sum_zero_pairs(numbers):
         >>> sort_pairs( get_sum_zero_pairs([1, 3, -1, 1, 1, 0]) )
         [[-1, 1], [0, 0]]
     """
+
+    #psuedocode:
+    # create an empty dictionary called answers
+    # if a number is not already in the dictionary add the key to the dictionary
+    # if a number is not already in the value for that key and is not the same
+    # as that key, add the number as a value for that key 
+    # return the key and value pairs that equal 0
 
     return []
 
@@ -119,8 +132,20 @@ def top_chars(phrase):
 
     """
 
-    return []
+    # pseudocode:
+    #seperate the string into a list of letters
+    #remove whitespaces
+    #Create a dictionary
+    #If the letter is not already in the dictioary, add the letter as a key
+    #the value is the number of times the letter appears in the string (.count)
+    #Create a list called answer
+    #pick random key
+    #iterate over the dictionary comparing the value of our random key to the 
+    #values of the other keys. if our random value is greater than or equal to 
+    #the values of the other keys append it to the list. 
+    #return the sorted answers list.
 
+    
 #####################################################################
 # You can ignore everything below this.
 
