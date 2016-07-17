@@ -70,6 +70,7 @@ def find_unique_common_items(items1, items2):
 
     return items1 & items2
 
+
 def get_sum_zero_pairs(numbers):
     """Given list of numbers, return list of pair summing to 0.
 
@@ -101,7 +102,7 @@ def get_sum_zero_pairs(numbers):
     # create an empty dictionary called answers
     # if a number is not already in the dictionary add the key to the dictionary
     # if a number is not already in the value for that key and is not the same
-    # as that key, add the number as a value for that key 
+    # as that key, add the number as a value for that key
     # return the key and value pairs that equal 0
 
     return []
@@ -140,12 +141,11 @@ def top_chars(phrase):
     #the value is the number of times the letter appears in the string (.count)
     #Create a list called answer
     #pick random key
-    #iterate over the dictionary comparing the value of our random key to the 
-    #values of the other keys. if our random value is greater than or equal to 
-    #the values of the other keys append it to the list. 
+    #iterate over the dictionary comparing the value of our random key to the
+    #values of the other keys. if our random value is greater than or equal to
+    #the values of the other keys append it to the list.
     #return the sorted answers list.
 
-    
 #####################################################################
 # You can ignore everything below this.
 

@@ -30,7 +30,15 @@ def count_words(phrase):
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
     """
 
-    return {}
+    words_and_count = {}  # create an empty dictionary
+
+    phrase = phrase.split(" ")
+    for word in phrase:
+        if word not in words_and_count:
+            words_and_count[word] = phrase.count(word)
+        else:
+            continue
+    return words_and_count  # return the dictionary
 
 
 def get_melon_price(melon_name):
@@ -40,7 +48,7 @@ def get_melon_price(melon_name):
     Watermelon 2.95
     Cantaloupe 2.50
     Musk 3.25
-    Christmas 14.25 
+    Christmas 14.25
     (it was a bad year for Christmas melons -- supply is low!)
 
         >>> get_melon_price('Watermelon')
@@ -48,12 +56,14 @@ def get_melon_price(melon_name):
 
         >>> get_melon_price('Musk')
         3.25
-        
+
         >>> get_melon_price('Tomato')
         'No price found'
     """
 
-    return 0
+    melons = {'Watermelon': 2.95, 'Cantaloupe': 2.50, 'Musk': 3.25, 'Christmas': 14.25}
+
+    return melons.get(melon_name, 'No price found')
 
 
 def word_length_sorted(words):
@@ -72,8 +82,22 @@ def word_length_sorted(words):
         [(1, ['a']), (2, ['an', 'ok']), (3, ['day']), (5, ['apple'])]
     """
 
-    return []
 
+    word_length_dict = {}
+    answer_list = []
+
+    for word in words:
+        my_word = [word]
+        length = len(word)
+        if length not in word_length_dict:
+            word_length_dict[length] = my_word
+        else:
+            word_length_dict[length].append(word)
+
+    answer_list = word_length_dict.items()
+
+    return sorted(answer_list)
+    # So close! my sub list is not ordered properly
 
 def translate_to_pirate_talk(phrase):
     """Translate phrase to pirate talk.
@@ -113,6 +137,19 @@ def translate_to_pirate_talk(phrase):
         >>> translate_to_pirate_talk("my student is not a man!")
         'me swabbie be not a man!'
     """
+
+    translation = {"sir": "matey", "hotel": "fleabag inn", "student": "swabbie",
+                   "man": "matey", "professor": "foul blaggart", "restaurant": "galley",
+                   "your": "yer", "excuse": "arr", "students": "swabbies", "are": "be",
+                   "restroom": "head", "my": "me", "is": "be"}
+
+    # pseudocode:
+    # create answer list
+    # for words in phrase, if the word is not in the dictionary:
+    # append word to a new list.
+    # if the word is in the dictionary, append the value to the answer list
+    # Use .Join to concatenate the answer list into a string with spaces
+    # return answer string
 
     return ""
 
@@ -154,6 +191,15 @@ def kids_game(names):
     a dictionary (with the super-fast lookup they provide) can help;
     good solutions here will definitely require a dictionary.
     """
+
+    # I ran out of time
+    # My solution would involve making "names" into a list. Then for each item
+    # in the list, getting the negative one index (last letter of the word)
+    # of that word and making that the key in a dictionary. The values would be the words
+    # that start with that letter. I think that .pop might work to take the value
+    # out of the values list so it's not reused. Then return the list
+
+
 
     return []
 
